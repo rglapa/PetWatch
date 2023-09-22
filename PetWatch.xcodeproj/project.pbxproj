@@ -15,6 +15,8 @@
 		846ABDFF2ABE24270038F963 /* PetWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABDFE2ABE24270038F963 /* PetWatchTests.swift */; };
 		846ABE092ABE24270038F963 /* PetWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABE082ABE24270038F963 /* PetWatchUITests.swift */; };
 		846ABE0B2ABE24270038F963 /* PetWatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABE0A2ABE24270038F963 /* PetWatchUITestsLaunchTests.swift */; };
+		846ABE182ABE25EE0038F963 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABE172ABE25EE0038F963 /* Pet.swift */; };
+		846ABE1A2ABE2DA90038F963 /* FirstOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABE192ABE2DA90038F963 /* FirstOpenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		846ABE042ABE24270038F963 /* PetWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846ABE082ABE24270038F963 /* PetWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWatchUITests.swift; sourceTree = "<group>"; };
 		846ABE0A2ABE24270038F963 /* PetWatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		846ABE172ABE25EE0038F963 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		846ABE192ABE2DA90038F963 /* FirstOpenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOpenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				846ABDEB2ABE24270038F963 /* PetWatchApp.swift */,
+				846ABE192ABE2DA90038F963 /* FirstOpenView.swift */,
 				846ABDED2ABE24270038F963 /* ContentView.swift */,
 				846ABDEF2ABE24270038F963 /* Item.swift */,
+				846ABE172ABE25EE0038F963 /* Pet.swift */,
 				846ABDF12ABE24270038F963 /* Assets.xcassets */,
 				846ABDF32ABE24270038F963 /* Preview Content */,
 			);
@@ -261,8 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				846ABDEE2ABE24270038F963 /* ContentView.swift in Sources */,
+				846ABE182ABE25EE0038F963 /* Pet.swift in Sources */,
 				846ABDF02ABE24270038F963 /* Item.swift in Sources */,
 				846ABDEC2ABE24270038F963 /* PetWatchApp.swift in Sources */,
+				846ABE1A2ABE2DA90038F963 /* FirstOpenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

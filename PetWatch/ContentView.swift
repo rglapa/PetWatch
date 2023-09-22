@@ -11,6 +11,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    @Query private var petList: [Pet]
 
     var body: some View {
         NavigationSplitView {
@@ -50,6 +51,20 @@ struct ContentView: View {
         withAnimation {
             for index in offsets {
                 modelContext.delete(items[index])
+            }
+        }
+    }
+    private func addPet() {
+        withAnimation {
+            let newPet = Pet(firstName:"", lastName: "",breed:"")
+            modelContext.insert(newPet)
+        }
+    }
+    
+    private func deletePets(offsets: IndexSet) {
+        withAnimation {
+            for index in offsets {
+                modelContext.delete(petList[index])
             }
         }
     }
