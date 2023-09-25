@@ -10,9 +10,11 @@ import SwiftData
 
 @main
 struct PetWatchApp: App {
+    let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
+            Pet.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -28,5 +30,6 @@ struct PetWatchApp: App {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+        
     }
 }

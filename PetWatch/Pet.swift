@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftData
-
+import PhotosUI
 @Model
 final class Pet {
     var firstName: String
@@ -15,10 +15,15 @@ final class Pet {
     var breed: String
     var age: Int?
     var weight: Int?
+    var image: Data?
     
-    init(firstName: String, lastName: String, breed: String) {
+    init(firstName: String, lastName: String, breed: String, age: Int? = nil, weight: Int? = nil, image: Data? = nil) {
         self.firstName = firstName
         self.lastName = lastName
         self.breed = breed
+        self.age = age
+        self.weight = weight
+        self.image = image
     }
+    
 }

@@ -10,27 +10,42 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    //@Query private var items: [Item]
     @Query private var petList: [Pet]
+    @State var showNewPetSheet: Bool = false
 
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                Section {
+                    ForEach(petList) { pet in
+                        NavigationLink(destination: FirstOpenView()) {
+                            Text("\(pet.firstName)")
+                        }
                     }
+                    /*ForEach(items) { item in
+                        NavigationLink {
+                            Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                            
+                        } label: {
+                            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        }
+                    }
+                    .onDelete(perform: deleteItems)
+                     */
+                } header: {
+                    Text("Your Pets")
+                        .font(.system(size: 40))
                 }
-                .onDelete(perform: deleteItems)
             }
+            .headerProminence(.increased)
+            
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: addPet) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
@@ -38,9 +53,13 @@ struct ContentView: View {
         } detail: {
             Text("Select an item")
         }
+        .sheet(isPresented: $showNewPetSheet, content: {
+            NewPetView(showNewPetSheet: showNewPetSheet)
+        })
+        .navigationBarBackButtonHidden(true)
     }
 
-    private func addItem() {
+    /*private func addItem() {
         withAnimation {
             let newItem = Item(timestamp: Date())
             modelContext.insert(newItem)
@@ -53,11 +72,10 @@ struct ContentView: View {
                 modelContext.delete(items[index])
             }
         }
-    }
+    }*/
     private func addPet() {
         withAnimation {
-            let newPet = Pet(firstName:"", lastName: "",breed:"")
-            modelContext.insert(newPet)
+            showNewPetSheet.toggle()
         }
     }
     
@@ -72,5 +90,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Pet.self, inMemory: true)
 }
