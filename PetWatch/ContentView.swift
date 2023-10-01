@@ -10,7 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    //@Query private var items: [Item]
+    @Query private var items: [Item]
     @Query private var petList: [Pet]
     @State var showNewPetSheet: Bool = false
 
@@ -19,10 +19,11 @@ struct ContentView: View {
             List {
                 Section {
                     ForEach(petList) { pet in
-                        NavigationLink(destination: FirstOpenView()) {
+                        NavigationLink(destination: PetDetailView(pet: pet)) {
                             Text("\(pet.firstName)")
                         }
                     }
+                    .onDelete(perform: deletePets)
                     /*ForEach(items) { item in
                         NavigationLink {
                             Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
@@ -37,6 +38,7 @@ struct ContentView: View {
                     Text("Your Pets")
                         .font(.system(size: 40))
                 }
+                
             }
             .headerProminence(.increased)
             
@@ -45,7 +47,7 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addPet) {
+                    Button(action: addPetView) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
@@ -73,7 +75,7 @@ struct ContentView: View {
             }
         }
     }*/
-    private func addPet() {
+    private func addPetView() {
         withAnimation {
             showNewPetSheet.toggle()
         }

@@ -13,8 +13,8 @@ struct PetWatchApp: App {
     let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
             Pet.self,
+            Item.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
