@@ -18,19 +18,8 @@ class Pet: ObservableObject {
     var breed: String
     var petAge: String
     var petWeight: String
+    var petNotes: String
     var imageData : Data?
-    
-    
-    /*var imageSelection: PhotosPickerItem? = nil {
-        didSet {
-            if let imageSelection {
-                let progress = loadTransferable(from: imageSelection)
-                imageState = .loading(progress)
-            } else {
-                imageState = .empty
-            }
-        }
-    }*/
     
     init() {
         self.firstName = ""
@@ -38,14 +27,23 @@ class Pet: ObservableObject {
         self.breed = ""
         self.petAge = ""
         self.petWeight = ""
+        self.petNotes = ""
+        self.imageData = Data()
     }
     
-    init(firstName: String, lastName: String, breed: String, petAge: String, petWeight: String, image: Data) {
+    init(firstName: String, 
+         lastName: String,
+         breed: String,
+         petAge: String,
+         petWeight: String,
+         petNotes: String,
+         image: Data) {
         self.firstName = firstName
         self.lastName = lastName
         self.breed = breed
         self.petAge = petAge
         self.petWeight = petWeight
+        self.petNotes = petNotes
         self.imageData = image
     }
 }

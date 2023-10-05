@@ -17,17 +17,20 @@ struct PetImageView: View {
                     .frame(width: 100, height: 100)
                     
             } else if pet.imageData == nil || pet.imageData == Data() {
-                ZStack {
+                ZStack { // Layering up from bottom
                     LinearGradient(colors: [.yellow,.orange], startPoint: .top, endPoint: .bottom)
                         .frame(width: 100, height: 100)
-                    Image(systemName:"dog.fill")
-                        .foregroundStyle(.black)
-                        .font(.system(size:45))
+                    LinearGradient(colors: [.blue,.purple], startPoint: .leading, endPoint: .trailing)
+                        .mask(
+                            Image(systemName:"dog.fill")
+                                .foregroundStyle(.white)
+                                .font(.system(size:44))
+                        )
+                        .frame(width:100,height:100)
                 }
             }
     }
 }
-
 
 struct CirclePetImageView: View {
     @State var pet: Pet
@@ -35,7 +38,6 @@ struct CirclePetImageView: View {
     var body: some View {
         PetImageView(pet: pet)
             .clipShape(Circle())
-            
             .overlay(alignment:.bottomTrailing) {
                 PhotosPicker(selection: $selectedPhoto,
                              matching: .images,
@@ -53,4 +55,8 @@ struct CirclePetImageView: View {
                 }
             }
     }
+}
+
+#Preview {
+    CirclePetImageView(pet: Pet())
 }

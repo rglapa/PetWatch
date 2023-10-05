@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct PetDetailView: View {
-    @State var pet : Pet
+    var pet : Pet
     var body: some View {
         Details(pet: pet)
     }
 }
 
 struct Details: View {
-    var pet: Pet
+    @State var pet: Pet
     var body: some View {
         NavigationSplitView {
             List {
@@ -35,7 +35,7 @@ struct Details: View {
                         Spacer()
                     }
                 } header: {
-                    Text("Name")
+                    Text("Pet Name")
                 }
                 Section {
                     HStack {
@@ -65,6 +65,15 @@ struct Details: View {
                 } header: {
                     Text("Weight")
                 }
+                Section {
+                    VStack {
+                        TextField("Your Notes",text: $pet.petNotes)
+                        Spacer()
+                    }
+                    .frame(height: 120)
+                } header: {
+                    Text("Notes")
+                }
             }
         } detail: {
             Text("Information")
@@ -73,5 +82,5 @@ struct Details: View {
 }
 
 #Preview {
-    PetDetailView(pet: Pet(firstName: "Artemis", lastName: "Glapa", breed: "Poodle", petAge: "5", petWeight: "70", image: Data()))
+    PetDetailView(pet: Pet(firstName: "Artemis", lastName: "Glapa", breed: "Poodle", petAge: "5", petWeight: "70", petNotes: "", image: Data()))
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		841788D82AC21AE200B53AC9 /* PetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841788D72AC21AE200B53AC9 /* PetDetailView.swift */; };
 		841788DC2AC3831100B53AC9 /* CirclePetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841788DB2AC3831100B53AC9 /* CirclePetImageView.swift */; };
+		845F35C02ACDE0230020D814 /* PetImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F35BF2ACDE0230020D814 /* PetImagesView.swift */; };
 		846ABDEC2ABE24270038F963 /* PetWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABDEB2ABE24270038F963 /* PetWatchApp.swift */; };
 		846ABDEE2ABE24270038F963 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABDED2ABE24270038F963 /* ContentView.swift */; };
 		846ABDF02ABE24270038F963 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABDEF2ABE24270038F963 /* Item.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		841788D72AC21AE200B53AC9 /* PetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailView.swift; sourceTree = "<group>"; };
 		841788DB2AC3831100B53AC9 /* CirclePetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePetImageView.swift; sourceTree = "<group>"; };
+		845F35BF2ACDE0230020D814 /* PetImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImagesView.swift; sourceTree = "<group>"; };
 		846ABDE82ABE24270038F963 /* PetWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846ABDEB2ABE24270038F963 /* PetWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWatchApp.swift; sourceTree = "<group>"; };
 		846ABDED2ABE24270038F963 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				841788DB2AC3831100B53AC9 /* CirclePetImageView.swift */,
+				845F35BF2ACDE0230020D814 /* PetImagesView.swift */,
 			);
 			path = ImageFiles;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845F35C02ACDE0230020D814 /* PetImagesView.swift in Sources */,
 				846ABDEE2ABE24270038F963 /* ContentView.swift in Sources */,
 				846ABE182ABE25EE0038F963 /* Pet.swift in Sources */,
 				846ABDF02ABE24270038F963 /* Item.swift in Sources */,

@@ -17,26 +17,15 @@ struct NewPetView: View {
         case breed
         case petAge
         case petWeight
-        case button
-        case background
+        case petNotes
     }
     
-    enum ImageState {
-        case empty
-        case loading(Progress)
-        case success(Image)
-        case failure(Error)
-    }
-    
-    enum TransferError: Error {
-        case importFailed
-    }
-    
-    @Environment(\.modelContext) private var modelContext
+    @Environment(\.modelContext) private var petContainer
     @Environment(\.dismiss) var dismiss
     @State var newPet = Pet()
     @State var showNewPetSheet: Bool
     @State var selectedPhoto: PhotosPickerItem?
+    
     
     @FocusState var focusedField: FocusedField?
     
@@ -50,25 +39,20 @@ struct NewPetView: View {
         NavigationStack {
             List {
                 Section {
-                    HStack {
+                    HStack { // Horizontal Spacing
                         Spacer()
                         CirclePetImageView(pet: newPet, selectedPhoto: selectedPhoto)
                         Spacer()
                     }
-                        /*PhotosPicker(selection: $selectedPhoto,
-                                 matching: .images,
-                                 photoLibrary: .shared()) {
-                        Label("Add Image", systemImage: "photo")
-                    }*/
                 }
                 .listRowBackground(Color.clear)
                 Section {
                     TextField("Enter First Name", text: $newPet.firstName)
-                        //.focused($focusedField, equals:.firstName)
+                        .focused($focusedField, equals:.firstName)
                     TextField("Enter Last Name", text: $newPet.lastName)
-                        //.focused($focusedField, equals: .lastName)
+                        .focused($focusedField, equals: .lastName)
                     TextField("Enter Breed", text: $newPet.breed)
-                        //.focused($focusedField, equals: .breed)
+                        .focused($focusedField, equals: .breed)
                 } header: {
                     Text("New Pet")
                         //.padding(.top)
@@ -76,13 +60,19 @@ struct NewPetView: View {
                 }.headerProminence(.increased)
                 Section {
                     TextField("Enter Age", text: $newPet.petAge)
-                        //.focused($focusedField, equals: .petAge)
+                        .focused($focusedField, equals: .petAge)
                     TextField("Enter Weight", text: $newPet.petWeight)
-                        //.focused($focusedField, equals: .petWeight)
+                        .focused($focusedField, equals: .petWeight)
                 }
-                
+                Section {
+                    VStack {
+                        TextField("Enter Notes", text: $newPet.petNotes)
+                            .focused($focusedField, equals: .petNotes)
+                        Spacer()
+                    }
+                }
+                .frame(height:180)
             }
-            
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add pet", action: {
@@ -97,14 +87,11 @@ struct NewPetView: View {
             }
         }
         .onTapGesture {
-            //focusedField = nil
-            /*if let focusField = focusedField {
-                print(focusField)
-            }*/
+            focusedField = nil
         }
     }
     private func addNewPet(pet: Pet) {
-        modelContext.insert(pet)
+        petContainer.insert(pet)
         dismiss()
         showNewPetSheet.toggle()
     }

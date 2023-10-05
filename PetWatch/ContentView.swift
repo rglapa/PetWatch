@@ -7,13 +7,26 @@
 
 import SwiftUI
 import SwiftData
+import MapKit
 
 struct ContentView: View {
+
+    var body: some View {
+        TabView {
+            PetListView()
+                .tabItem { Label("Pets", systemImage: "dog") }
+            TodayView()
+                .tabItem { Label("Today", systemImage: "doc.text.image")}
+            PetImagesView()
+                .tabItem { Label("Photos", systemImage: "photo")}
+        }
+    }
+}
+
+struct PetListView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
     @Query private var petList: [Pet]
     @State var showNewPetSheet: Bool = false
-
     var body: some View {
         NavigationSplitView {
             List {
@@ -24,16 +37,6 @@ struct ContentView: View {
                         }
                     }
                     .onDelete(perform: deletePets)
-                    /*ForEach(items) { item in
-                        NavigationLink {
-                            Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                            
-                        } label: {
-                            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                        }
-                    }
-                    .onDelete(perform: deleteItems)
-                     */
                 } header: {
                     Text("Your Pets")
                         .font(.system(size: 40))
@@ -60,21 +63,7 @@ struct ContentView: View {
         })
         .navigationBarBackButtonHidden(true)
     }
-
-    /*private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }*/
+    
     private func addPetView() {
         withAnimation {
             showNewPetSheet.toggle()
@@ -86,6 +75,14 @@ struct ContentView: View {
             for index in offsets {
                 modelContext.delete(petList[index])
             }
+        }
+    }
+}
+
+struct TodayView: View {
+    var body: some View {
+        VStack {
+            
         }
     }
 }

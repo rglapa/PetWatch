@@ -11,7 +11,7 @@ import SwiftData
 @main
 struct PetWatchApp: App {
     let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-    var sharedModelContainer: ModelContainer = {
+    var sharedPetModelContainer: ModelContainer = {
         let schema = Schema([
             Pet.self,
             Item.self,
@@ -29,7 +29,7 @@ struct PetWatchApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(sharedPetModelContainer)
         
     }
 }
