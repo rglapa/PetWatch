@@ -81,6 +81,6 @@ struct Details: View {
     }
 }
 
-#Preview {
+#Preview("Pet View") {
     PetDetailView(pet: Pet(firstName: "Artemis", lastName: "Glapa", breed: "Poodle", petAge: "5", petWeight: "70", petNotes: "", image: Data()))
 }

@@ -15,8 +15,6 @@ struct ContentView: View {
         TabView {
             PetListView()
                 .tabItem { Label("Pets", systemImage: "dog") }
-            TodayView()
-                .tabItem { Label("Today", systemImage: "doc.text.image")}
             PetImagesView()
                 .tabItem { Label("Photos", systemImage: "photo")}
         }
@@ -44,19 +42,18 @@ struct PetListView: View {
                 
             }
             .headerProminence(.increased)
-            
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
                     Button(action: addPetView) {
-                        Label("Add Item", systemImage: "plus")
+                        Label("Add Items", systemImage: "plus")
                     }
                 }
             }
         } detail: {
-            Text("Select an item")
+            Text("Select a pet")
         }
         .sheet(isPresented: $showNewPetSheet, content: {
             NewPetView(showNewPetSheet: showNewPetSheet)
@@ -82,12 +79,21 @@ struct PetListView: View {
 struct TodayView: View {
     var body: some View {
         VStack {
-            
+            Text("Pet Test")
+            HStack {
+                Rectangle()
+                    .fill(Color.blue)
+                    .frame(width: 40, height: 60)
+                    
+            }
         }
     }
 }
 
-#Preview {
+#Preview("Content View") {
     ContentView()
         .modelContainer(for: Pet.self, inMemory: true)
+}
+#Preview("Today View") {
+    TodayView()
 }
