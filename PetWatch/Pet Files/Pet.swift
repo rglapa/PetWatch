@@ -20,6 +20,7 @@ class Pet: ObservableObject {
     var petWeight: String
     var petNotes: String
     var imageData : Data?
+    var photoGallery: [Data]
     
     init() {
         self.firstName = ""
@@ -29,6 +30,7 @@ class Pet: ObservableObject {
         self.petWeight = ""
         self.petNotes = ""
         self.imageData = Data()
+        self.photoGallery = []
     }
     
     init(firstName: String, 
@@ -45,5 +47,6 @@ class Pet: ObservableObject {
         self.petWeight = petWeight
         self.petNotes = petNotes
         self.imageData = image
+        self.photoGallery = []
     }
 }

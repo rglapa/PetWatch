@@ -90,10 +90,19 @@ struct TodayView: View {
     }
 }
 
+struct PetImagesView: View {
+    var body: some View {
+        PetGalleryView()
+    }
+}
+
 #Preview("Content View") {
     ContentView()
         .modelContainer(for: Pet.self, inMemory: true)
 }
 #Preview("Today View") {
     TodayView()
+}
+#Preview("Image View") {
+    PetImagesView()
 }

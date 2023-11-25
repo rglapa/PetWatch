@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		452900612B0FD5A1000A07ED /* bullElkSparring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 452900602B0FD5A1000A07ED /* bullElkSparring.jpg */; };
+		452900632B0FD5C5000A07ED /* bobcat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 452900622B0FD5C5000A07ED /* bobcat.jpg */; };
+		45BA203F2B114C5200D49793 /* PetGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA203E2B114C5200D49793 /* PetGalleryView.swift */; };
 		841788D82AC21AE200B53AC9 /* PetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841788D72AC21AE200B53AC9 /* PetDetailView.swift */; };
 		841788DC2AC3831100B53AC9 /* CirclePetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841788DB2AC3831100B53AC9 /* CirclePetImageView.swift */; };
-		845F35C02ACDE0230020D814 /* PetImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F35BF2ACDE0230020D814 /* PetImagesView.swift */; };
 		846ABDEC2ABE24270038F963 /* PetWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABDEB2ABE24270038F963 /* PetWatchApp.swift */; };
 		846ABDEE2ABE24270038F963 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABDED2ABE24270038F963 /* ContentView.swift */; };
 		846ABDF02ABE24270038F963 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABDEF2ABE24270038F963 /* Item.swift */; };
@@ -41,9 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		452900602B0FD5A1000A07ED /* bullElkSparring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bullElkSparring.jpg; sourceTree = "<group>"; };
+		452900622B0FD5C5000A07ED /* bobcat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bobcat.jpg; sourceTree = "<group>"; };
+		45BA203E2B114C5200D49793 /* PetGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetGalleryView.swift; sourceTree = "<group>"; };
 		841788D72AC21AE200B53AC9 /* PetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailView.swift; sourceTree = "<group>"; };
 		841788DB2AC3831100B53AC9 /* CirclePetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePetImageView.swift; sourceTree = "<group>"; };
-		845F35BF2ACDE0230020D814 /* PetImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImagesView.swift; sourceTree = "<group>"; };
 		846ABDE82ABE24270038F963 /* PetWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846ABDEB2ABE24270038F963 /* PetWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWatchApp.swift; sourceTree = "<group>"; };
 		846ABDED2ABE24270038F963 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4529005F2B0FD58D000A07ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				452900602B0FD5A1000A07ED /* bullElkSparring.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		841788D92AC3809100B53AC9 /* Pet Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				841788DB2AC3831100B53AC9 /* CirclePetImageView.swift */,
-				845F35BF2ACDE0230020D814 /* PetImagesView.swift */,
+				45BA203E2B114C5200D49793 /* PetGalleryView.swift */,
 			);
 			path = ImageFiles;
 			sourceTree = "<group>";
@@ -127,6 +139,7 @@
 		846ABDEA2ABE24270038F963 /* PetWatch */ = {
 			isa = PBXGroup;
 			children = (
+				4529005F2B0FD58D000A07ED /* Resources */,
 				846ABDEB2ABE24270038F963 /* PetWatchApp.swift */,
 				846ABDED2ABE24270038F963 /* ContentView.swift */,
 				841788DA2AC380F400B53AC9 /* ImageFiles */,
@@ -143,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				846ABDF42ABE24270038F963 /* Preview Assets.xcassets */,
+				452900622B0FD5C5000A07ED /* bobcat.jpg */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -268,7 +282,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452900632B0FD5C5000A07ED /* bobcat.jpg in Resources */,
 				846ABDF52ABE24270038F963 /* Preview Assets.xcassets in Resources */,
+				452900612B0FD5A1000A07ED /* bullElkSparring.jpg in Resources */,
 				846ABDF22ABE24270038F963 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,10 +310,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845F35C02ACDE0230020D814 /* PetImagesView.swift in Sources */,
 				846ABDEE2ABE24270038F963 /* ContentView.swift in Sources */,
 				846ABE182ABE25EE0038F963 /* Pet.swift in Sources */,
 				846ABDF02ABE24270038F963 /* Item.swift in Sources */,
+				45BA203F2B114C5200D49793 /* PetGalleryView.swift in Sources */,
 				841788D82AC21AE200B53AC9 /* PetDetailView.swift in Sources */,
 				841788DC2AC3831100B53AC9 /* CirclePetImageView.swift in Sources */,
 				846ABE1C2ABF60880038F963 /* NewPetView.swift in Sources */,
