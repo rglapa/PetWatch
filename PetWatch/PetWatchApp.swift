@@ -22,10 +22,10 @@ struct PetWatchApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-
+    @State private var petFamily = PetGroup()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(petFamily)
         }
         .modelContainer(sharedModelContainer)
     }

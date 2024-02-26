@@ -9,12 +9,16 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @Environment(PetGroup.self) private var petGroup: PetGroup?
     @Environment(\.modelContext) private var modelContext
-    @Environment(PetGroup.self) private var petGroup
+    @Environment(\.dismiss) private var dismiss
+    
     @Query private var items: [Item]
 
     var body: some View {
-        NavigationSplitView {
+        NewPetView(pet: Pet())
+            .onTapGesture { dismiss() }
+        /*NavigationSplitView {
             List {
                 ForEach(items) { item in
                     NavigationLink {
@@ -37,7 +41,7 @@ struct ContentView: View {
             }
         } detail: {
             Text("Select an item")
-        }
+        }*/
     }
 
     private func addItem() {

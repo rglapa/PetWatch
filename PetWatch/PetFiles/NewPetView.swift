@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct NewPetView: View {
+    @Environment(PetGroup.self) private var petGroup: PetGroup?
+    @Environment(\.dismiss) private var dismiss
+    @Bindable var pet: Pet
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("First Name", text: $pet.name)
+                .textFieldStyle(.roundedBorder)
+                .onSubmit { dismiss() }
+        }
     }
 }
 
 #Preview {
-    NewPetView()
+    NewPetView(pet: Pet())
 }

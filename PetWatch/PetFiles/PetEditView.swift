@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct PetEditView: View {
+    @Environment(PetGroup.self) private var petGroup: PetGroup?
+    @Bindable var pet: Pet
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(pet.name)
+            Text(pet.breed)
+        }
     }
 }
 
 #Preview {
-    PetEditView()
+    PetEditView(pet: Pet())
 }
