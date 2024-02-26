@@ -10,6 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(PetGroup.self) private var petGroup
     @Query private var items: [Item]
 
     var body: some View {
