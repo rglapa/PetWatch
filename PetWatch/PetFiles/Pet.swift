@@ -9,6 +9,14 @@ import SwiftUI
 import Observation
 
 @Observable class Pet: Identifiable {
-    var name: String = "Sample Pet"
+    var firstName: String = "Sample"
+    var lastName: String = "Pet"
     var breed: String = "Poodle"
+    var petPhoto: Image?
+    
+    init() {
+        firstName = ""
+        lastName = ""
+        breed = ""
+    }
 }

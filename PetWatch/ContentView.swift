@@ -9,15 +9,20 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(PetGroup.self) private var petGroup: PetGroup?
+    @Environment(\.petFamily) private var petGroup
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @State var showSheet = false
     
     @Query private var items: [Item]
 
     var body: some View {
-        NewPetView(pet: Pet())
-            .onTapGesture { dismiss() }
+        Button("Show Sheet") {
+            showSheet.toggle()
+        }
+        .sheet(isPresented: $showSheet, content: {
+            NewPetView(pet: Pet())
+        })
         /*NavigationSplitView {
             List {
                 ForEach(items) { item in

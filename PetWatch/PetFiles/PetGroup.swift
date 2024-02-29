@@ -10,4 +10,6 @@ import Observation
 
 @Observable class PetGroup {
     var petFamily: [Pet] = []
+    init() {
+    }
 }

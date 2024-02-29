@@ -19,6 +19,7 @@
 		84CE6CA22B8BDE5D00673CE0 /* PetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE6CA12B8BDE5D00673CE0 /* PetGroup.swift */; };
 		84CE6CA42B8D310800673CE0 /* PetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE6CA32B8D310800673CE0 /* PetEditView.swift */; };
 		84CE6CA62B8D388500673CE0 /* NewPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE6CA52B8D388500673CE0 /* NewPetView.swift */; };
+		84CE6CA82B8E993A00673CE0 /* PetImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE6CA72B8E993A00673CE0 /* PetImagesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		84CE6CA12B8BDE5D00673CE0 /* PetGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetGroup.swift; sourceTree = "<group>"; };
 		84CE6CA32B8D310800673CE0 /* PetEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEditView.swift; sourceTree = "<group>"; };
 		84CE6CA52B8D388500673CE0 /* NewPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetView.swift; sourceTree = "<group>"; };
+		84CE6CA72B8E993A00673CE0 /* PetImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				84CE6C9F2B8BDDCB00673CE0 /* Pet.swift */,
+				84CE6CA72B8E993A00673CE0 /* PetImagesView.swift */,
 				84CE6CA12B8BDE5D00673CE0 /* PetGroup.swift */,
 				84CE6CA32B8D310800673CE0 /* PetEditView.swift */,
 				84CE6CA52B8D388500673CE0 /* NewPetView.swift */,
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CE6CA82B8E993A00673CE0 /* PetImagesView.swift in Sources */,
 				84CE6C752B8BDC5100673CE0 /* ContentView.swift in Sources */,
 				84CE6CA02B8BDDCB00673CE0 /* Pet.swift in Sources */,
 				84CE6CA42B8D310800673CE0 /* PetEditView.swift in Sources */,

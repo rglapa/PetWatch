@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct PetEditView: View {
-    @Environment(PetGroup.self) private var petGroup: PetGroup?
+    @Environment(\.petFamily) private var petGroup
     @Bindable var pet: Pet
+    @FocusState var isFocused: Bool
     var body: some View {
         VStack {
-            Text(pet.name)
+            Text(pet.firstName)
             Text(pet.breed)
         }
     }

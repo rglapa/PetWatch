@@ -25,8 +25,18 @@ struct PetWatchApp: App {
     @State private var petFamily = PetGroup()
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(petFamily)
+            ContentView().environment(\.petFamily, petFamily)
         }
         .modelContainer(sharedModelContainer)
     }
+}
+extension EnvironmentValues {
+    var petFamily: PetGroup {
+        get { self[PetGroupKey.self]}
+        set { self[PetGroupKey.self] = newValue }
+    }
+}
+
+private struct PetGroupKey: EnvironmentKey {
+    static var defaultValue: PetGroup = PetGroup()
 }
