@@ -13,6 +13,7 @@ struct PetWatchApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
+            Pet.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,9 +26,10 @@ struct PetWatchApp: App {
     @State private var petFamily = PetGroup()
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.petFamily, petFamily)
+            ContentView()
         }
         .modelContainer(sharedModelContainer)
+        
     }
 }
 extension EnvironmentValues {

@@ -9,20 +9,54 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.petFamily) private var petGroup
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State var showSheet = false
-    
+    @State private var pet = Pet()
+    @State private var showCreate = false
     @Query private var items: [Item]
-
+    @Query private var pets: [Pet]
     var body: some View {
-        Button("Show Sheet") {
+        /*Button("Show Sheet") {
             showSheet.toggle()
         }
         .sheet(isPresented: $showSheet, content: {
-            NewPetView(pet: Pet())
-        })
+            NewPetView()
+        })*/
+        NavigationStack {
+            List {
+                ForEach(pets) { pet in
+                    HStack {
+                        Text(pet.firstName)
+                        Text(pet.lastName)
+                    }
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            withAnimation {
+                                modelContext.delete(pet)
+                            }
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                                .symbolVariant(.fill)
+                        }
+                    }
+                }
+            }
+                .toolbar {
+                    ToolbarItem {
+                        Button(action: {
+                            showCreate.toggle()
+                        }, label: {
+                            Label("Add Item", systemImage: "plus")
+                        })
+                    }
+                }
+                .sheet(isPresented: $showCreate, content: {
+                    NavigationStack {
+                        NewPetView()
+                    }
+                })
+        }
         /*NavigationSplitView {
             List {
                 ForEach(items) { item in
@@ -67,5 +101,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

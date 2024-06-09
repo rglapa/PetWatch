@@ -7,27 +7,30 @@
 
 import SwiftUI
 import PhotosUI
+import SwiftData
 
 struct PetImagesView: View {
-    @Environment(\.petFamily) private var petGroup
-    @Environment(\.dismiss) private var dismiss
-    @State var selectedItems: PhotosPickerItem?
+    @Environment(\.modelContext) private var modelContext;
+    @Query private var pets: [Pet]
     var body: some View {
+        Text("Test")
         //UIImage(data: petGroup?.petFamily[0].petPhotos[0]?)
-        VStack {
+        /*VStack {
+            if let petImage = pet.petImage, let uiImage = UIImage(data: petImage) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, maxHeight: 300)
+            }
             PhotosPicker(selection: $selectedItems, matching: .images) {
                 Text("Select Photo")
             }
-            petGroup.petFamily[0].petPhoto?
-                .resizable()
-                .scaledToFit()
-            Text(petGroup.petFamily[0].firstName)
         }
-        //Image(data: petGroup?.petFamily[0].petPhoto, placeholder: "No Image Saved")
-        .task(id: selectedItems) {
-            petGroup.petFamily[0].petPhoto = try? await selectedItems?.loadTransferable(type: Image.self)
-            //print(petGroup.petFamily.count)
-        }
+        .task(id:selectedItems) {
+            if let data = try? await selectedItems?.loadTransferable(type: Data.self) {
+                pet.petImage = data
+            }
+        }*/
     }
 }
 
